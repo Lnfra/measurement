@@ -17,8 +17,14 @@ public class Measurement {
     if (o == null || getClass() != o.getClass()) return false;
 
     Measurement that = (Measurement) o;
+    return this.convertToInch() == that.convertToInch();
+  }
 
-    return value * 12 == that.value;
+  private int convertToInch(){
+    if (this.unit.equals("foot")) {
+      return value * 12;
+    }
+    return value;
   }
 
   @Override
