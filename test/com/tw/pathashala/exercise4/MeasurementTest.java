@@ -61,4 +61,24 @@ public class MeasurementTest {
   public void expect1KilometreNotEquals99Metre() {
     assertNotEquals(new Measurement(1, KILOMETRE), new Measurement(99, METRE));
   }
+
+  @Test
+  public void expect1KilogramEquals1000Gram() {
+    assertEquals(new Measurement(1, KILOGRAM), new Measurement(1000, GRAM));
+  }
+
+  @Test
+  public void expect1000GramEquals1Kilogram() {
+    assertEquals(new Measurement(1000, GRAM), new Measurement(1, KILOGRAM));
+  }
+
+  @Test
+  public void expect1KilogramNotEquals999Gram() {
+    assertNotEquals(new Measurement(1, KILOGRAM), new Measurement(999, GRAM));
+  }
+
+  @Test
+  public void expect1KilogramNotEquals1Kilometre() {
+    assertNotEquals(new Measurement(1, KILOGRAM), new Measurement(1, KILOMETRE));
+  }
 }

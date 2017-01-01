@@ -19,7 +19,8 @@ public class Measurement {
     if (o == null || getClass() != o.getClass()) return false;
 
     Measurement that = (Measurement) o;
-    return this.unit.convertToBase(this.value) == that.unit.convertToBase(that.value);
+    return this.unit.isCompatibleUnitType(that.unit) &&
+        (this.unit.convertToBase(this.value) == that.unit.convertToBase(that.value));
   }
 
   @Override
