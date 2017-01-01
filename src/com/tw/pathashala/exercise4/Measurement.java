@@ -1,12 +1,14 @@
 package com.tw.pathashala.exercise4;
 
+import static com.tw.pathashala.exercise4.Unit.*;
+
 //Represents a value for length
 public class Measurement {
 
   private final int value;
-  private final String unit;
+  private final Unit unit;
 
-  public Measurement(int value, String unit) {
+  public Measurement(int value, Unit unit) {
     this.value = value;
     this.unit = unit;
   }
@@ -17,14 +19,7 @@ public class Measurement {
     if (o == null || getClass() != o.getClass()) return false;
 
     Measurement that = (Measurement) o;
-    return this.convertToInch() == that.convertToInch();
-  }
-
-  private int convertToInch(){
-    if (this.unit.equals("foot")) {
-      return value * 12;
-    }
-    return value;
+    return this.unit.convertToBase(this.value) == that.unit.convertToBase(that.value);
   }
 
   @Override
