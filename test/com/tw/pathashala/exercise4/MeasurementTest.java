@@ -15,4 +15,10 @@ public class MeasurementTest {
   public void expect12InchEquals1Foot() {
     assertEquals(new Measurement(12, "inch"), new Measurement(1, "foot"));
   }
+
+  @Test
+  public void expect1FootNotEquals13Inch() {
+    assertNotEquals(new Measurement(1, "foot"), new Measurement(13, "inch"));
+  }
+
 }
