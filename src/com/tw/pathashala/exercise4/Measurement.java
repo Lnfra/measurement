@@ -4,13 +4,10 @@ import static com.tw.pathashala.exercise4.Unit.*;
 
 //Represents a value for length
 public class Measurement {
-
-  private final int value;
-  private final Unit unit;
+  MeasurementValue value;
 
   public Measurement(int value, Unit unit) {
-    this.value = value;
-    this.unit = unit;
+    this.value = new MeasurementValue(value, unit);
   }
 
   @Override
@@ -19,22 +16,18 @@ public class Measurement {
     if (o == null || getClass() != o.getClass()) return false;
 
     Measurement that = (Measurement) o;
-    return this.unit.isCompatibleUnitType(that.unit) &&
-        (this.unit.convertToBase(this.value) == that.unit.convertToBase(that.value));
+    return this.value.equals(that.value);
   }
 
   @Override
   public int hashCode() {
-    int result = value;
-    result = 31 * result + (unit != null ? unit.hashCode() : 0);
-    return result;
+    return value != null ? value.hashCode() : 0;
   }
 
   @Override
   public String toString() {
     return "Measurement{" +
         "value=" + value +
-        ", unit='" + unit + '\'' +
         '}';
   }
 }
