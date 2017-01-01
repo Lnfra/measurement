@@ -10,6 +10,14 @@ public class MeasurementValue {
     this.unit = unit;
   }
 
+  MeasurementValue addition(MeasurementValue other) {
+    if (!this.unit.isCompatibleUnitType(other.unit)){
+      throw new IllegalArgumentException();
+    }
+
+    return new MeasurementValue(this.value + other.value, this.unit);
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
