@@ -1,0 +1,4 @@
+# List files and folders git should ignore
+
+/out/
+/.idea/
