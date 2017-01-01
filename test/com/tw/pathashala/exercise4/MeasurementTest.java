@@ -22,4 +22,18 @@ public class MeasurementTest {
     assertNotEquals(new Measurement(1, FOOT), new Measurement(13, INCH));
   }
 
+  @Test
+  public void expect1MetreEquals100Centimetre() {
+    assertEquals(new Measurement(1, METRE), new Measurement(100, CENTIMETRE));
+  }
+
+  @Test
+  public void expect100CentimetreEquals1Metre() {
+    assertEquals(new Measurement(100, CENTIMETRE), new Measurement(1, METRE));
+  }
+
+  @Test
+  public void expect1MetreNotEquals99Centimetre() {
+    assertNotEquals(new Measurement(1, METRE), new Measurement(99, CENTIMETRE));
+  }
 }
