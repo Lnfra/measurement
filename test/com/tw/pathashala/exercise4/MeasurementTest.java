@@ -36,4 +36,29 @@ public class MeasurementTest {
   public void expect1MetreNotEquals99Centimetre() {
     assertNotEquals(new Measurement(1, METRE), new Measurement(99, CENTIMETRE));
   }
+
+  @Test
+  public void expect1KilometreEquals100000Centimetre() {
+    assertEquals(new Measurement(1, KILOMETRE), new Measurement(100000, CENTIMETRE));
+  }
+
+  @Test
+  public void expect100000CentimetreEquals1Kilometre() {
+    assertEquals(new Measurement(100000, CENTIMETRE), new Measurement(1, KILOMETRE));
+  }
+
+  @Test
+  public void expect1KilometreEquals1000Metre() {
+    assertEquals(new Measurement(1, KILOMETRE), new Measurement(1000, METRE));
+  }
+
+  @Test
+  public void expect100MetreEquals1Kilometre() {
+    assertEquals(new Measurement(1000, METRE), new Measurement(1, KILOMETRE));
+  }
+
+  @Test
+  public void expect1KilometreNotEquals99Metre() {
+    assertNotEquals(new Measurement(1, KILOMETRE), new Measurement(99, METRE));
+  }
 }

@@ -1,7 +1,7 @@
 package com.tw.pathashala.exercise4;
 
 public enum Unit {
-  FOOT(12), INCH(1), METRE(100), CENTIMETRE(1);
+  INCH(1), FOOT(12), CENTIMETRE(1), METRE(100), KILOMETRE(100000);
 
   private final int conversionFactor;
 
